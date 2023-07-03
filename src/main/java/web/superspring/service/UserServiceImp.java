@@ -63,5 +63,10 @@ public class UserServiceImp implements UserService, UserDetailsService {
     public User findUsersByEmail(String email) {
         return userRepository.findUsersByEmail(email);
     }
+
+    @Override
+    public void autoLogin(String email) {
+
+    }
 }
 

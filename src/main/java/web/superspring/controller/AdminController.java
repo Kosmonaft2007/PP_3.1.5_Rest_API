@@ -13,6 +13,8 @@ import web.superspring.service.RoleService;
 import web.superspring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import web.superspring.validator.UserValidator;
+
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.List;
@@ -22,6 +24,8 @@ import java.util.stream.Collectors;
 @RestController
 public class AdminController {
     private final UserService userService;
+    @Autowired
+    private UserValidator userValidator;
     private final RoleService roleService;
     @Autowired
     public AdminController(UserService userService, RoleService roleService) {
@@ -42,13 +46,7 @@ public class AdminController {
         return ResponseEntity.ok(user);
     }
     @PostMapping("/api/users")
-    public ResponseEntity<HttpStatus> addNewUser(@RequestBody  @Valid User user, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            StringBuilder errorMessage = new StringBuilder();
-            List<FieldError> fieldErrors = bindingResult.getFieldErrors();
-            fieldErrors.forEach(fieldError -> errorMessage.append(fieldErrors).append("::: \n"));
-            throw new UserNotCreateEx(errorMessage.toString());
-        }
+    public ResponseEntity<HttpStatus> addNewUser(@RequestBody  User user) {
         userService.add(user);
         return new ResponseEntity<>(HttpStatus.OK);
     }

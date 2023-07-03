@@ -16,13 +16,8 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NotEmpty(message = "Not null")
     private String firstName;
-    @NotEmpty(message = "Not null")
-    @Size(min = 2, max = 15, message = "Необходимое количество знаков от2 до 15")
     private String lastname;
-    @Max(value = 100, message = "Положительное число от 0 до 100")
-    @Min(value = 0, message = "Положительное число от 0 до 100")
     private int age;
     @Column(name = "email", unique = true)
     private String email;
