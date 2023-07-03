@@ -16,7 +16,6 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Pattern(regexp = "^[a-zA-Z-А-аЯ-я]+$", message = "Только русские и английские буквы")
     @NotEmpty(message = "Not null")
     private String firstName;
     @NotEmpty(message = "Not null")

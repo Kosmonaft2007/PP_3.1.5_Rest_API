@@ -91,18 +91,18 @@
                                                         <input class="form-control" type="text" name="id" id="editID" disabled>
                                                         <label for="editName">
                                                             <strong>First name</strong>
-                                                            <input class="form-control" type="text" name="firstName" id="editName" placeholder="Username">
+                                                            <input class="form-control" type="text" name="firstName" id="editName" placeholder="Username" minlength="2" >
                                                         </label>
                                                         <b><label for="editLastName">Last Name</label></b>
-                                                        <input class="form-control" placeholder="Lastname" type="text" name="lastname" id="editLastName">
+                                                        <input class="form-control" placeholder="Lastname" type="text" name="lastname" id="editLastName" minlength="2" >
                                                         <b><label for="editAge">Age</label></b>
                                                         <input class="form-control" placeholder="First name" type="number" name="age" id="editAge">
                                                         <b><label for="editEmail">Email</label></b>
                                                         <input class="form-control" placeholder="Email" type="email" name="email" id="editEmail">
                                                         <b><label for="editPassword">Password</label></b>
-                                                        <input class="form-control" placeholder="Password" type="password" name="password" id="editPassword" minlength="3">
-                                                        <b><label for="editRole" class="form-label" size="2">Roles</label> </b>
-                                                        <select multiple size="2" class="form-control" id="editRole" name="roles" required>
+                                                        <input class="form-control" placeholder="Password" type="password" name="password" id="editPassword" minlength="2">
+                                                        <b><label for="editRole" class="form-label" size="4">Roles</label> </b>
+                                                        <select multiple size="2" class="form-control" id="editRole" name="roles" >
                                                             <option value="1">ADMIN</option>
                                                             <option value="2">USER</option>
                                                         </select>
@@ -166,10 +166,10 @@
                                 <form id="addUser">
                                     <div style="margin-left: auto; margin-right: auto" class="form-group col-3 text-center">
                                         <b><label for="new_name">First Name</label></b>
-                                        <input class="form-control" placeholder="First name" type="text" id="new_name" name="firstName">
+                                        <input class="form-control" placeholder="First name" type="text" id="new_name" name="firstName"  minlength="2">
                                         <br/>
                                         <b><label for="new_lastname">Last Name</label></b>
-                                        <input class="form-control" placeholder="Last name" type="text" id="new_lastname" name="lastname">
+                                        <input class="form-control" placeholder="Last name" type="text" id="new_lastname" name="lastname" minlength="2">
                                         <br/>
                                         <b> <label for="new_age">Age</label></b>
                                         <input class="form-control" placeholder="Age" type="text" id="new_age" name="age">
@@ -178,7 +178,7 @@
                                         <input class="form-control" placeholder="Email" type="email" id="new_email" name="email">
                                         <br/>
                                         <b> <label for="new_password">Password</label></b>
-                                        <input class="form-control" placeholder="Password" type="password" id="new_password" name="password">
+                                        <input class="form-control" placeholder="Password" type="password" id="new_password" name="password" minlength="2" >
                                         <br/>
                                         <label for="rolesID" class="form-label" size="2"><b>Role</b></label>
                                         <select multiple size="2" class="form-control" id="rolesID" name="roles" required>
